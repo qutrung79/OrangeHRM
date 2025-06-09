@@ -29,8 +29,8 @@ test.describe('User Search Tests', () => {
   await expect(cells.nth(3)).toHaveText('manda123 user');          // Employee Name
   await expect(cells.nth(4)).toHaveText('Enabled');                // Status
 
-  await expect(row.locator('i.bi-pencil-fill')).toBeVisible();  // Edit icon
-  await expect(row.locator('i.bi-trash')).toBeVisible();        // Delete icon
+  await expect(row.locator('i.bi-pencil-fill')).toBeVisible();      // Edit icon
+  await expect(row.locator('i.bi-trash')).toBeVisible();            // Delete icon
 });
 
   test('TC_SEARCH_002 - Search by partial username', async ({ page }) => {
