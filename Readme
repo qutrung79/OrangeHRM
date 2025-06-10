@@ -1,0 +1,33 @@
+1. Framework structure and rationale
+- Playwright E2E Automation Framework (TypeScript)
+Modern, modular end-to-end automation framework built using Playwright + TypeScript to support UI, API, regression, and performance testing with CI/CD and cross-browser support.
+
+** Structure
+
+e2e-playwright-framework/
+├── allure-results/ # Log (videos/image/json...)
+├── html-report/ # Data and trace logs 
+├── tests/ # Test specs organized by type (UI)
+│ └── login.test.ts/
+│ └── search.test.ts/
+│ └── employeeSearch.test.ts/
+├── pages/ # Page Object Models (POM) for UI abstraction
+│ └── adminPage.ts/
+│ └── loginPage.ts/
+│ └── employeeSearch.ts/
+├── utils/ # Helper functions (e.g. API helpers, config utils)
+├── reports/ # Allure/HTML reports
+├── test-results/ # Artifacts like screenshots/videos
+├── .env # Environment variables (BASE_URL, credentials)
+├── playwright.config.ts # Playwright test configuration
+├── package.json # Project metadata and test scripts
+├── tsconfig.json # TypeScript configuration
+└── README.md # to explain what you need
+
+2. Steps to execute the demo scripts
+From the root --> cd to the folder(ex: e2e-playwright-framework) 
+Run all tests : npx playwright test
+Run a specific test: npx playwright test tests/search.test.ts (npx playwright test tests/search.test.ts --iu) in case you want to run with UI
+Run tests in a specific browser: npx playwright test --project=chromium
+Run only 1 test: choose the test then "test.only"
+
